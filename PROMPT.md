@@ -1,6 +1,6 @@
 # Blog Application – Full Stack Development Prompt
 
----
+
 
 # Context and Role
 
@@ -32,6 +32,26 @@ The project should include:
 - Scalable database architecture supporting blogs, comments, categories, analytics, and user activity.
 - Production-ready deployment structure with clean architecture and reusable codebase.
 - SEO optimization, image optimization, caching strategies, and scalable infrastructure support.
+
+---
+---
+# Table of Contents
+
+1. [Input Data](#input-data)
+2. [Data Processing Requirements](#data-processing-requirements)
+3. [Model Requirements](#model-requirements)
+4. [Output Requirements](#output-requirements)
+5. [Error Handling and Documentation](#error-handling-and-documentation)
+6. [Performance and Scalability](#performance-and-scalability)
+7. [Tools and Libraries](#tools-and-libraries)
+8. [Folder Structure Requirements](#folder-structure-requirements)
+9. [Application Features](#application-features)
+10. [UI and Animation Requirements](#ui-and-animation-requirements)
+11. [Backend Requirements](#backend-requirements)
+12. [Database Requirements](#database-requirements)
+13. [File Upload System](#file-upload-system)
+14. [Search and Filtering](#search-and-filtering)
+15. [Contact System](#contact-system)
 
 ---
 
