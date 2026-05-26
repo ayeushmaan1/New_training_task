@@ -1,331 +1,191 @@
 # Blog Application – Full Stack Development Prompt
 
-## Context and Role
-As a full-stack developer, your task is to design and develop a modern full-featured Blog Application with separate User and Admin authentication systems. The application should provide a smooth, responsive, and visually engaging experience while maintaining strong security, scalability, accessibility, and performance standards.
+---
 
-The blog platform should support content creation, publishing, editing, user engagement, and administrative moderation through a clean and professional UI with modern animations and interactive elements.
+# Context and Role
+
+As a full-stack developer, your responsibility is to design and develop a modern, scalable, secure, and production-ready Blog Application with separate User and Admin authentication systems. The platform should provide a smooth, responsive, and visually engaging experience while following industry-standard development practices.
+
+The application should support content publishing, user engagement, blog management, analytics, moderation, and secure API communication using a clean architecture and modular folder structure. The system should also prioritize scalability, maintainability, accessibility, performance optimization, and reusable component-based development.
+
+Key expectations include:
+
+- Build a highly responsive and interactive frontend optimized for desktop, tablet, and mobile devices.
+- Implement secure backend APIs with authentication, authorization, validation, and error handling.
+- Maintain clean code architecture with reusable components, modular services, and scalable folder organization.
+- Ensure the project is deployment-ready with optimized performance and proper environment-based configuration management.
+- Follow production-level software engineering standards including security best practices, structured logging, and maintainable documentation.
 
 ---
 
 # Objective
 
-Develop a complete Blog Application that:
+Develop a complete Full Stack Blog Application that delivers a modern blogging experience for both users and administrators.
 
-- Uses a modern frontend architecture with responsive UI
-- Supports separate User and Admin authentication systems
-- Allows users to read, search, comment, like, and bookmark blogs
-- Allows admins to manage users, blogs, comments, and analytics
-- Implements secure backend APIs with authentication and authorization
-- Includes modern animations and transitions using Framer Motion
-- Provides scalable and maintainable folder structure
-- Supports production-level deployment and performance optimization
+The project should include:
 
----
-
-# Application Features
-
-## Authentication System
-
-Implement secure authentication and authorization for:
-
-- User Login and Signup
-- Admin Login
-- JWT or Session-based Authentication
-- Protected Routes
-- Role-Based Access Control (RBAC)
-
-### Authentication Features Should Include
-
-- Signup with validation
-- Secure password hashing using bcrypt
-- Forgot Password and Reset Password functionality
-- Email verification (optional)
-- Persistent login sessions
-- Logout functionality
-- Google OAuth login (optional)
+- Separate User and Admin authentication systems with protected routes and role-based access control.
+- Blog creation, editing, publishing, bookmarking, commenting, and engagement features.
+- Admin dashboard for analytics, moderation, blog management, and user management.
+- Secure REST APIs or Next.js API routes with proper validation and middleware integration.
+- Modern animations and transitions using Framer Motion while maintaining optimized rendering performance.
+- Scalable database architecture supporting blogs, comments, categories, analytics, and user activity.
+- Production-ready deployment structure with clean architecture and reusable codebase.
+- SEO optimization, image optimization, caching strategies, and scalable infrastructure support.
 
 ---
 
-# User Features
+# Input Data
 
-Users should be able to:
+The system should support multiple forms of structured and unstructured input data from frontend forms, APIs, database operations, and media upload systems.
 
-- Create an account and login securely
-- View all blogs
-- Search blogs by title, category, or tags
-- Filter blogs by category
-- Read full blog posts
-- Like and bookmark blogs
-- Comment on blog posts
-- Edit or delete their own comments
-- Manage their profile
-- Upload profile image
-- View saved/bookmarked blogs
-- View recently read blogs
+## Supported Input Sources
 
----
+- User authentication data including email, username, password, and profile details.
+- Blog-related data including titles, descriptions, categories, tags, thumbnails, markdown content, and rich text editor content.
+- User engagement data such as comments, likes, bookmarks, and reading activity.
+- Admin moderation data including analytics filters, reports, and management actions.
+- Uploaded media including profile pictures, blog cover images, and inline content images.
+- Search and filtering parameters such as categories, keywords, tags, and sorting preferences.
 
-# Admin Features
+## Input Validation Requirements
 
-Admin panel should allow:
-
-- Admin login authentication
-- Dashboard with analytics overview
-- Create, edit, publish, and delete blogs
-- Manage blog categories and tags
-- Upload blog cover images
-- Moderate comments
-- Delete inappropriate comments
-- Manage users
-- Block or remove users
-
-### Platform Statistics
-
-- Total users
-- Total blogs
-- Most viewed blogs
-- Recent activity
-- Comment analytics
+- Validate all incoming request payloads before processing.
+- Sanitize user-generated content to prevent XSS and malicious input injection.
+- Restrict file uploads using size limits and supported file type validation.
+- Ensure structured API request and response formatting.
+- Reject malformed or unauthorized requests using proper validation middleware.
 
 ---
 
-# Blog Editor Requirements
+# Data Processing Requirements
 
-Implement a rich blog writing experience including:
+Before storing or processing data, implement preprocessing and transformation mechanisms to ensure consistency, security, and optimized application behavior.
 
-- Rich text editor or Markdown editor
-- Image upload support
-- Blog preview before publishing
-- Draft saving functionality
-- Tag and category support
-- SEO-friendly slug generation
-- Estimated reading time calculation
-- Syntax highlighting for code blocks (optional)
+## Data Processing and Transformation
 
----
+- Normalize user input such as trimming whitespace, formatting text, and converting emails to lowercase.
+- Generate SEO-friendly slugs automatically from blog titles.
+- Compress and optimize uploaded images for faster loading and reduced storage usage.
+- Parse markdown or rich text editor content safely for rendering and database storage.
+- Sanitize comments and blog content to prevent spam and script injection attacks.
 
-# UI and Animation Requirements
+## Database Processing
 
-## Modern UI Design
-
-The application should have:
-
-- Clean modern UI
-- Responsive layouts for mobile, tablet, and desktop
-- Minimal and professional design
-- Accessible semantic HTML structure
-- Dark mode support (optional)
+- Automatically generate timestamps, analytics counters, metadata, and reading time estimations.
+- Maintain proper relationships between users, blogs, comments, categories, and bookmarks.
+- Use indexing for frequently searched fields to improve query performance.
+- Support pagination-ready data handling for scalable API responses.
 
 ---
 
-## Animations
+# Model Requirements
 
-Use Framer Motion for:
+The application architecture and database models should support scalability, modularity, maintainability, and future expansion.
 
-- Page transitions
-- Fade-in animations
-- Staggered blog card animations
-- Modal animations
-- Hover effects
-- Scroll-based reveal animations
-- Interactive dashboard animations
+## Core Models
 
-### Animation Guidelines
+- User Model with authentication details, profile information, bookmarks, and activity tracking.
+- Blog Model with title, slug, content, categories, tags, analytics, and publication status.
+- Comment Model supporting replies, moderation status, and ownership tracking.
+- Category and Tag Models for blog organization and filtering.
+- Analytics Model for tracking engagement metrics such as views, likes, bookmarks, and trends.
 
-Animations should:
+## Architectural Requirements
 
-- Feel smooth and modern
-- Use optimized properties like transform and opacity
-- Avoid performance-heavy animations
-- Work smoothly across devices
-
----
-
-# Pages and Layout Requirements
-
-## Public Pages
-
-- Home Page
-- Featured Blogs Section
-- Trending Blogs
-- Categories Section
-- Blog Detail Page
-- About Page
-- Contact Page
+- Follow modular and reusable architecture principles across frontend and backend.
+- Implement clean separation between controllers, routes, services, middleware, and database models.
+- Use reusable frontend components with centralized state management.
+- Design the system for future scalability including AI integrations, notifications, and real-time features.
+- Maintain scalable API structures with proper middleware handling and service abstraction.
 
 ---
 
-## User Pages
+# Output Requirements
 
-- Login Page
-- Signup Page
-- Profile Dashboard
-- Bookmarks Page
-- User Settings Page
+The final project should deliver a fully functional and production-ready Blog Application with modern UI, secure backend architecture, and scalable infrastructure.
 
----
+## Expected Deliverables
 
-## Admin Pages
+- Responsive and visually modern frontend application.
+- Secure User and Admin authentication systems.
+- Rich blog creation and editing experience.
+- Admin dashboard with analytics and moderation tools.
+- Optimized APIs with validation, authorization, and structured responses.
+- Scalable database integration with reusable architecture.
+- Smooth animations and interactive user experience using Framer Motion.
+- Clean reusable codebase with maintainable folder structure.
+- Deployment-ready project with documentation and setup instructions.
 
-- Admin Dashboard
-- Manage Blogs Page
-- Create/Edit Blog Page
-- Manage Users Page
-- Manage Comments Page
-- Analytics Page
+## Expected Quality Standards
 
----
-
-# Backend Requirements
-
-## API Development
-
-Create secure REST APIs or Next.js API routes for:
-
-- Authentication
-- Blog CRUD operations
-- Comments management
-- Likes and bookmarks
-- User profile management
-- Admin moderation features
+- Optimized application performance and Core Web Vitals.
+- Clean and maintainable coding standards.
+- Accessibility-friendly semantic UI implementation.
+- Reusable components and modular backend structure.
+- Secure production-level architecture following industry best practices.
 
 ---
 
-## Security Requirements
+# Error Handling and Documentation
 
-Secure all APIs using:
+Implement structured error handling and proper documentation across frontend, backend, APIs, and deployment configurations.
 
-- JWT authentication
-- Role-based middleware
-- Input sanitization
-- Rate limiting
-- Helmet security middleware
-- CORS protection
-- XSS prevention
-- CSRF protection (if required)
+## Error Handling Requirements
 
----
+- Use centralized backend error-handling middleware.
+- Return structured JSON error responses with proper HTTP status codes.
+- Display meaningful frontend validation and API failure messages.
+- Handle authentication, authorization, and validation failures gracefully.
+- Maintain server-side logs for debugging and monitoring purposes.
 
-## Validation
+## Documentation Requirements
 
-Validate and sanitize all incoming data.
-
-### Prevent
-
-- XSS attacks
-- Injection attacks
-- Invalid file uploads
-- Unauthorized API access
+- Provide complete project setup and installation instructions.
+- Document API endpoints with request and response examples.
+- Include deployment steps and environment variable configurations.
+- Maintain clean inline comments for complex logic and reusable modules.
+- Add README documentation covering project overview, features, and architecture.
 
 ---
 
-# Database Requirements
+# Performance and Scalability
 
-Use MongoDB or PostgreSQL.
+Ensure the application is optimized for performance and capable of handling future growth in users, content, and traffic.
 
-### Database Should Support
+## Performance Optimization
 
-- Users collection/table
-- Blogs collection/table
-- Comments collection/table
-- Bookmarks collection/table
-- Categories collection/table
-- Analytics data
+- Implement lazy loading and code splitting for frontend optimization.
+- Optimize images, API calls, and rendering performance.
+- Use pagination or infinite scrolling for large datasets.
+- Reduce unnecessary re-renders using optimized state management.
+- Apply caching strategies and CDN-ready asset handling.
 
-### Optional Features
+## Scalability Requirements
 
-- Redis caching
-- Search indexing
-- Cloudinary or AWS S3 image storage
-
----
-
-# File Upload System
-
-Implement secure image upload handling for:
-
-- Profile pictures
-- Blog cover images
-- Inline blog images
-
-### Features Should Include
-
-- File size validation
-- Supported format validation
-- Secure storage handling
-- Optimized image delivery
+- Design APIs and backend services to support horizontal scaling.
+- Maintain modular architecture for easier feature expansion.
+- Support database indexing, caching, and optimized querying.
+- Prepare infrastructure for deployment on cloud platforms such as Vercel, AWS, or Docker environments.
+- Ensure maintainable architecture suitable for long-term collaborative development.
 
 ---
 
-# Search and Filtering
+# Tools and Libraries
 
-Implement advanced search functionality including:
+Use modern and industry-standard technologies for frontend, backend, database management, animations, authentication, and deployment.
 
-- Keyword search
-- Tag filtering
-- Category filtering
-
-### Sorting Options
-
-- Latest
-- Most viewed
-- Most liked
-- Trending
-
----
-
-# Contact System
-
-Create a contact form that:
-
-- Allows visitors to contact the platform owner
-- Uses animated modal or dedicated page
-- Sends email notifications using Nodemailer
-- Validates all inputs properly
-- Returns structured success/error responses
-
----
-
-# Performance Optimization
-
-Optimize the application by:
-
-- Using lazy loading
-- Code splitting
-- Image optimization
-- Caching strategies
-- Pagination or infinite scrolling
-- Reducing unnecessary re-renders
-- Optimizing API calls
-- Using lightweight animations
-
----
-
-# Scalability and Maintainability
-
-Ensure the project:
-
-- Uses reusable components
-- Follows clean architecture
-- Separates frontend and backend concerns properly
-- Uses environment variables securely
-- Supports future scalability
-
----
-
-# Technology Stack
-
-## Frontend
+## Frontend Technologies
 
 - React.js or Next.js
 - Tailwind CSS
 - Framer Motion
-- Redux Toolkit or Context API
-- Axios
+- Redux Toolkit / Zustand / Context API
+- Axios or Fetch API
+- React Hook Form
+- Zod or Yup Validation
 
----
-
-## Backend
+## Backend Technologies
 
 - Node.js
 - Express.js or Next.js API Routes
@@ -333,10 +193,11 @@ Ensure the project:
 - bcrypt
 - Nodemailer
 - dotenv
+- Helmet
+- CORS
+- Express Rate Limit
 
----
-
-## Database
+## Database and Storage
 
 - MongoDB with Mongoose
 
@@ -344,21 +205,22 @@ Ensure the project:
 
 - PostgreSQL with Prisma
 
----
-
-# Optional Integrations
+## Optional Integrations
 
 - Cloudinary or AWS S3
 - Redis
 - Google OAuth
 - Markdown Editor
-- React Query or TanStack Query
+- React Query / TanStack Query
+- Docker Deployment Support
 
 ---
 
 # Folder Structure Requirements
 
-Maintain a scalable folder structure including:
+Maintain a scalable and modular folder structure with proper separation of concerns.
+
+## Recommended Folder Structure
 
 - components
 - pages or app router
@@ -372,32 +234,154 @@ Maintain a scalable folder structure including:
 - models
 - controllers
 - routes
+- config
+- public/assets
+- types/interfaces
+- tests
+
+## Folder Structure Expectations
+
+- Keep reusable logic separated from UI components.
+- Organize backend logic into modular layers.
+- Maintain scalable naming conventions and clean architecture.
+- Ensure future extensibility and maintainability of the project structure.
 
 ---
 
-# Error Handling and Logging
+# Application Features
 
-Handle errors properly on both frontend and backend:
+## Authentication System
 
-- Frontend validation messages
-- Toast notifications
-- Graceful API failure handling
-- Backend validation handling
-- Structured JSON responses
-- Server-side logging
+- User Login and Signup
+- Admin Login
+- JWT or Session-based Authentication
+- Protected Routes
+- Role-Based Access Control (RBAC)
+
+## User Features
+
+- View blogs
+- Search and filter blogs
+- Like and bookmark blogs
+- Comment on blogs
+- Manage profile
+- Upload profile image
+- View saved blogs
+
+## Admin Features
+
+- Manage blogs
+- Moderate comments
+- Manage users
+- View analytics
+- Publish or remove content
 
 ---
 
-# Output Requirements
+# UI and Animation Requirements
 
-The final project should include:
+## Modern UI Design
 
-- Modern responsive blog application
-- Separate User and Admin authentication
-- Secure backend APIs
-- Admin dashboard with moderation tools
-- Rich blog creation system
-- Animations and interactive UI
-- Optimized performance
-- Clean reusable code structure
-- Proper documentation and deployment instructions
+- Clean modern UI
+- Responsive layouts
+- Accessible semantic HTML structure
+- Dark mode support
+
+## Animations
+
+Use Framer Motion for:
+
+- Page transitions
+- Hover effects
+- Modal animations
+- Scroll-based animations
+- Interactive dashboard effects
+
+---
+
+# Backend Requirements
+
+## API Development
+
+Create secure APIs for:
+
+- Authentication
+- Blog CRUD
+- Comments
+- Bookmarks
+- User management
+- Admin moderation
+
+## Security Requirements
+
+- JWT authentication
+- Input sanitization
+- Rate limiting
+- Helmet middleware
+- XSS protection
+- CORS protection
+- Secure file upload handling
+
+---
+
+# Database Requirements
+
+Database should support:
+
+- Users
+- Blogs
+- Comments
+- Bookmarks
+- Categories
+- Analytics
+
+Optional support for:
+
+- Redis caching
+- Search indexing
+- Cloudinary or AWS S3
+
+---
+
+# File Upload System
+
+Implement secure upload handling for:
+
+- Profile images
+- Blog cover images
+- Inline blog content images
+
+Features should include:
+
+- File validation
+- Size restriction
+- Optimized image delivery
+- Secure storage handling
+
+---
+
+# Search and Filtering
+
+Implement:
+
+- Keyword search
+- Category filtering
+- Tag filtering
+
+Sorting options:
+
+- Latest
+- Most viewed
+- Most liked
+- Trending
+
+---
+
+# Contact System
+
+Create a contact form that:
+
+- Sends email notifications
+- Validates all fields properly
+- Returns structured responses
+- Supports animated UI interactions
