@@ -385,3 +385,22 @@ Create a contact form that:
 - Validates all fields properly
 - Returns structured responses
 - Supports animated UI interactions
+
+## Folder Structure
+
+```text
+client/src/
+  components/
+  context/
+  pages/
+  services/
+server/src/
+  config/
+  controllers/
+  data/
+  middleware/
+  models/
+  routes/
+  utils/
+  validators/
+  ```
