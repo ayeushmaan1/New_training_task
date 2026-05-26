@@ -27,10 +27,14 @@ function normalizeRecord(record) {
   }
 
   const raw = typeof record.toObject === 'function' ? record.toObject() : record;
-  const { _id, __v, ...rest } = raw;
+  const id = String(raw.id || raw._id);
+  const rest = { ...raw };
+  delete rest.id;
+  delete rest._id;
+  delete rest.__v;
 
   return {
-    id: String(raw.id || _id),
+    id,
     ...rest
   };
 }
@@ -41,7 +45,10 @@ function publicUser(user) {
   }
 
   const normalized = normalizeRecord(user);
-  const { passwordHash, resetTokenHash, resetTokenExpires, ...safeUser } = normalized;
+  const safeUser = { ...normalized };
+  delete safeUser.passwordHash;
+  delete safeUser.resetTokenHash;
+  delete safeUser.resetTokenExpires;
   return safeUser;
 }
 
@@ -148,7 +155,7 @@ async function buildSeedData() {
       excerpt:
         'A practical look at shaping editorial workflows, moderation, and performance into a blog platform that can grow.',
       content:
-        '## Start with trust\n\nA modern content platform needs more than a posting form. It needs clear ownership, predictable publishing states, and a moderation trail that helps teams move quickly.\n\n```js\nconst publish = ({ draft, author }) => ({\n  ...draft,\n  author,\n  status: \"published\"\n});\n```\n\nStrong defaults make the product feel calm even when the audience grows.',
+        '## Start with trust\n\nA modern content platform needs more than a posting form. It needs clear ownership, predictable publishing states, and a moderation trail that helps teams move quickly.\n\n```js\nconst publish = ({ draft, author }) => ({\n  ...draft,\n  author,\n  status: "published"\n});\n```\n\nStrong defaults make the product feel calm even when the audience grows.',
       coverImage:
         'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1400&q=80',
       category: 'Engineering',

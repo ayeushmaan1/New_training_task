@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Bookmark, BookOpen, LayoutDashboard, LogOut, Menu, Moon, Shield, Sun, User, X } from 'lucide-react';
+import { Bookmark, BookOpen, LogOut, Menu, Moon, Shield, Sun, User, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useAuth } from '../../context/AuthContext.jsx';
 import { useTheme } from '../../context/ThemeContext.jsx';

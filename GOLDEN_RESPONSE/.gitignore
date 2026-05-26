@@ -4,4 +4,5 @@ dist/
 server/data/database.json
 server/uploads/
 npm-debug.log*
+dev-server*.log
 .DS_Store

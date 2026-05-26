@@ -22,7 +22,6 @@ const blogSchema = new mongoose.Schema(
 );
 
 blogSchema.index({ title: 'text', excerpt: 'text', content: 'text', tags: 'text' });
-blogSchema.index({ slug: 1 });
 blogSchema.index({ category: 1, status: 1 });
 
 export default mongoose.models.Blog || mongoose.model('Blog', blogSchema);

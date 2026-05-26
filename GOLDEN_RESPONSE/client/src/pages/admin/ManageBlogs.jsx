@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { Edit3, Plus, Search, Trash2 } from 'lucide-react';
@@ -14,7 +14,7 @@ export default function ManageBlogs() {
   const [filters, setFilters] = useState({ search: '', status: '' });
   const [categoryForm, setCategoryForm] = useState({ name: '', color: '#20a58a' });
 
-  async function load() {
+  const load = useCallback(async () => {
     const [blogsResponse, categoriesResponse] = await Promise.all([
       api.get('/admin/blogs', { params: { ...filters, includeDrafts: true, limit: 50 } }),
       api.get('/admin/categories')
@@ -22,12 +22,12 @@ export default function ManageBlogs() {
     setBlogs(blogsResponse.data.items);
     setCategories(categoriesResponse.data.categories);
     setLoading(false);
-  }
+  }, [filters]);
 
   useEffect(() => {
     const timeout = setTimeout(load, 180);
     return () => clearTimeout(timeout);
-  }, [filters]);
+  }, [load]);
 
   async function removeBlog(id) {
     await api.delete(`/blogs/${id}`);
